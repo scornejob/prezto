@@ -21,3 +21,53 @@ fi
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+
+# This is required by zfox
+export SSH_PRIVATE_KEY="$(cat ~/.ssh/id_ed25519)"
+
+#Mysql#
+export PATH="$PATH:/usr/local/mysql/bin"
+
+# go
+export GOPRIVATE="github.com/riskive"
+export GOPATH="$HOME/zerofox/go"
+export PATH="$PATH:$GOPATH/bin:/usr/local/go/bin"
+
+# bashcompletion failed
+zstyle ':completion:*:*:git:*' script ~/.zsh/git-completion.bash
+fpath=(~/.zsh $fpath)
+
+autoload -Uz compinit && compinit
+
+# hub autocmoplete
+if [ -f ~/.hub.bashcompletion ]; then
+  . ~/.hub.bashcompletion
+fi
+
+# nvm stuff
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+# terraform stuff
+# export PATH="/usr/local/opt/terraform@0.11/bin:$PATH"
+
+# VAULT
+export VAULT_AUTH_GITHUB_TOKEN="$(cat ~/.ssh/VAULT_AUTH_GITHUB_TOKEN)"
+
+autoload -U +X bashcompinit && bashcompinit
+complete -o nospace -C /usr/local/bin/nomad nomad
+
+# CONSUL
+export CONSUL_HTTP_TOKEN="$(cat ~/.ssh/CONSUL_HTTP_TOKEN)"
+complete -o nospace -C /usr/local/bin/consul consul
+
+# Pyenv
+PATH=$(pyenv root)/shims:$PATH
+eval "$(pyenv init -)"
+
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/Users/scornejo/repo/gcp_scripts/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/scornejo/repo/gcp_scripts/google-cloud-sdk/path.zsh.inc'; fi
+
+# The next line enables shell command completion for gcloud.
+if [ -f '/Users/scornejo/repo/gcp_scripts/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/scornejo/repo/gcp_scripts/google-cloud-sdk/completion.zsh.inc'; fi
