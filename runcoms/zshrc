@@ -71,3 +71,9 @@ if [ -f '/Users/scornejo/repo/gcp_scripts/google-cloud-sdk/path.zsh.inc' ]; then
 
 # The next line enables shell command completion for gcloud.
 if [ -f '/Users/scornejo/repo/gcp_scripts/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/scornejo/repo/gcp_scripts/google-cloud-sdk/completion.zsh.inc'; fi
+
+
+################### TEST
+
+export GOPATH="$HOME/zerofox/go"; export GOROOT="$HOME/.go"; export PATH="$GOPATH/bin:$PATH"; # g-install: do NOT edit, see https://github.com/stefanmaric/g
+alias goenv="$GOPATH/bin/g"; # g-install: do NOT edit, see https://github.com/stefanmaric/g
