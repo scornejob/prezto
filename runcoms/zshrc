@@ -77,3 +77,7 @@ if [ -f '/Users/scornejo/repo/gcp_scripts/google-cloud-sdk/completion.zsh.inc' ]
 
 export GOPATH="$HOME/zerofox/go"; export GOROOT="$HOME/.go"; export PATH="$GOPATH/bin:$PATH"; # g-install: do NOT edit, see https://github.com/stefanmaric/g
 alias goenv="$GOPATH/bin/g"; # g-install: do NOT edit, see https://github.com/stefanmaric/g
+
+export PATH="$HOME/.poetry/bin:$PATH"
+
+export JAVA_HOME=$(/usr/libexec/java_home)
