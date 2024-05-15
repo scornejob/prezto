@@ -35,3 +35,11 @@ alias docker-build-platform="docker buildx build --platform linux/amd64,linux/ar
 autoload bashcompinit && bashcompinit
 autoload -Uz compinit && compinit
 complete -C '/usr/local/bin/aws_completer' aws
+
+#maven
+export PATH=$PATH:/opt/apache-maven-3.8.8/bin
+
+#GH token
+export GITHUB_TOKEN=$(cat $HOME/.ssh/gh-token)
+export GH_TOKEN=$(cat $HOME/.ssh/gh-token)
+export AVR_GITHUB_TOKEN=$(cat $HOME/.ssh/avr-gh-token)
