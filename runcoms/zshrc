@@ -42,4 +42,3 @@ export PATH=$PATH:/opt/apache-maven-3.8.8/bin
 #GH token
 export GITHUB_TOKEN=$(cat $HOME/.ssh/gh-token)
 export GH_TOKEN=$(cat $HOME/.ssh/gh-token)
-export AVR_GITHUB_TOKEN=$(cat $HOME/.ssh/avr-gh-token)
